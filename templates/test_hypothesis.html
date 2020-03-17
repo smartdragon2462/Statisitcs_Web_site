@@ -1,0 +1,333 @@
+{% extends 'header.html' %}
+{% block content1 %}
+    <div class="hypothessis-page">
+        <label id="chart_data1" name="{{ plot_data[0] }}" style="display: none;"></label>
+        <label id="chart_data2" name="{{ plot_data[1] }}" style="display: none;"></label>
+
+        <div class="hypothesis-inputing">
+            <form role="form" method="POST" action="">
+                <div class="settings-group col-sm-3">
+                    <i class="hypothesis-font fa fa-cog"> Settings </i>
+                    <!-- <input id = "chart_data" type="hidden" class="form-control"  value={{ settings_values.long_leverage }} > -->
+                    <!-- <input name="long_leverage" type="text" class="form-control"  value={{ settings_values.long_leverage }} > -->
+                    <div class="settings-table">          
+                        <table class="table table-bordered ">
+                        <thead>                            
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="first col-sm-1">Start Date</th>
+                                <td class="col-sm-2">
+                                    <div class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input name="start_date" type="text" class="form-control" value={{ settings_values.start_date }} placeholder="yyyy-mm-dd">
+                                        <div class="input-group-addon" >
+                                        <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>                             
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">End Date</td>
+                                <td>
+                                    <div class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input name="end_date" type="text" class="form-control" value={{ settings_values.end_date }} placeholder="yyyy-mm-dd">
+                                        <div class="input-group-addon" >
+                                        <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>    
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Portfolio</td class="first">
+                                <td>
+                                    <select name="portfolio" class="form-control" id="sel1" >
+                                        <option value="0"{% if settings_values.portfolio==0 %} selected="selected"{% endif %}>US Top 540</option>
+                                        <option value="1"{% if settings_values.portfolio==1 %} selected="selected"{% endif %}>US Top 541</option>
+                                        <option value="2"{% if settings_values.portfolio==2 %} selected="selected"{% endif %}>US Top 542</option>
+                                        <option value="3"{% if settings_values.portfolio==3 %} selected="selected"{% endif %}>US Top 543</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Dollar Neutral</td class="first">
+                                <td>
+                                    <select name = "dollar_neutral" class="form-control" id="sel2" active={{ settings_values.dollar_neutral }} >
+                                        <option value="0"{% if settings_values.dollar_neutral==0 %} selected="selected"{% endif %}>Yes</option>
+                                        <option value="1"{% if settings_values.dollar_neutral==1 %} selected="selected"{% endif %}>No</option>
+                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Long Leverage</td class="first">
+                                <td>
+                                    <div class="input-group spinner0">
+                                        <input name="long_leverage" type="text" class="form-control"  value={{ settings_values.long_leverage }} >
+                                        <div class="input-group-btn-vertical">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Short Leverage</td class="first">
+                                <td>
+                                    <div class="input-group spinner1">
+                                        <input name = "short_leverage" type="text" class="form-control"  value={{ settings_values.short_leverage }}>
+                                        <div class="input-group-btn-vertical">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Costs Threshold</td class="first">
+                                <td>
+                                    <div class="input-group spinner2">
+                                        <input name = "costs_threshold" type="text" class="form-control"  value={{ settings_values.costs_threshold }}>
+                                        <div class="input-group-btn-vertical">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td class="first">Initial Value</td class="first">
+                                <td>
+                                    <div class="input-group spinner3">
+                                        <input name="starting_value" type="text" class="form-control"  value={{ settings_values.starting_value }}>
+                                        <div class="input-group-btn-vertical">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-up"></i></button>
+                                        <button class="btn btn-default" type="button"><i class="fa fa-caret-down"></i></button>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </tbody>
+                        </table>
+                        </div>
+                </div>
+            
+
+                <div class="hypothesis-group col-sm-9">
+                    <i class="hypothesis-font fa fa-plus-square"> New Hypothesis </i>
+                    <div>
+                        <input name ="strategy_expression" class="hypothesis-formula" type="text"  value={{ settings_values.strategy_expression }}>
+                        <div class="button-region">                        
+                            <button type="submit" class="btn"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Simulate</button>
+                        </div>                    
+                    </div>
+                </div>   
+            </form>
+        </div>
+
+
+        <div class="highcharts-figure" >
+            <div class="chart-region ">
+                <div id="highcharts-container"></div>
+            </div>
+        </div>
+    
+        <div class="hypothesis-result">
+            <table class="return-table1 table table-borderless">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>ANNUALIZED AVERAGE RETURNS</td>
+                        <td>SHARPE RATIO</td>
+                        <td>P(SR>2)</td>
+                        <td>IR</td>
+                        <td>MDD</td>
+                        <td>HIT RATIO</td>
+                    </tr>
+                    <tr>
+                        <td>{{ res['ANNUALIZED_AVERAGE_RATE_OF_RETURN']  }}%</td>
+                        <td>{{ res['SHARPE_RATIO'] }}</td>
+                        <td>{{ res['p-VALUE'] }}%</td>
+                        <td>4.45</td>
+                        <td>3.7%</td>
+                        <td>{{ res['HIT_RATIO'] }}%</td>
+                    </tr>                           
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="feature1-panel">
+            <table class="return-table2 table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">GENERAL CHARACTERISTICS</th>
+                    <th scope="col-sm-2"></th>
+                    <th scope="col-sm-2">PERFORMANCE MEASURES</th>
+                <th scope="col"></th>
+                    <th scope="col">RUNS</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>START DATE           :</td>
+                        <td>{{ res["START_DATE"] }}</td>
+                        <td>PLN FROM STRATEGY     :</td>
+                        <td>{{ res['PNL_FROM_STRATEGY'] }}</td>
+                        <td>HHI_PLUS             :</td>
+                        <td>{{ res['HHI_PLUS'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>END DATE           :</td>
+                        <td>{{ res['END_DATE'] }}</td>
+                        <td>PLN FROM LONG POSITIONS     :</td>
+                        <td>{{ res['PNL_FROM_LONG'] }}</td>
+                        <td>HHI_MINUS            :</td>
+                        <td>{{ res['HHI_MINUS'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>TOTAL BARS           :</td>
+                        <td>{{ res['TOTAL_BARS'] }}</td>
+                        <td>ANNUAUZED AVERAGE RETURN     :</td>
+                        <td>{{ res['ANNUALIZED_AVERAGE_RATE_OF_RETURN'] }}</td>
+                        <td>MAXIMUM DRAWDOWN            :</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AVERAGE AUM          :</td>
+                        <td>{{ res['AVERAGE_AUM'] }}</td>
+                        <td>HIT RATIO     :</td>
+                        <td>{{ res['HIT_RATIO'] }}</td>
+                        <td> MAXIMUM TIME UNDER WATER :</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>CAPACITY OF STRATEGY: </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>DRAWDOWN 95 PERCENTILE</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>AVERAGE POSITION SIZE: </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>TIME UNDER WATER 95 PERCENTILE</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>MAX POSITION SIZE </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>    
+                    <tr>
+                        <td>NET LEVEAGE </td>
+                        <td>{{ res['NET_LEVERAGE'] }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>  
+                    <tr>
+                        <td>AVERAGE DAILY TURNOVER</td>
+                        <td>{{ res['AVERAGE_DAILY_TURNOVER'] }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>         
+                    <tr>
+                        <td>CORRELATION TO UNDERLYING</td>
+                        <td>{{ res['CORRELATION_WITH_UNDERLYING'] }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>             
+                    <tr>
+                        <td>LONG RATIO</td>
+                        <td>{{ res['LONG_RATIO'] }}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>           
+                </tbody>
+            </table>
+        </div>
+
+        <div class="feature2-panel">
+            <div class="col-sm-8">
+                <table class="return-table3 table table-borderless">
+                    <thead>
+                    <tr>
+                        <th scope="col">EFFICIENCY MEASURES</th>
+                        <th scope="col-sm-2"></th>
+                        <th scope="col-sm-2">RISK MEASURES</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SHARPE RATIO           :</td>
+                            <td>{{ res["SHARPE_RATIO"] }}</td>
+                            <td>VOLATILITY     :</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>PROBABILISTIC SHARPE RATIO</td>
+                            <td>{{ res["PROBABILISTIC_SHARPE_RATIO"] }}</td>
+                            <td>VaR 99%</td>
+                            <td>{{ res["SIGNIFICANCE_AT_0.01%"] }}</td>      
+                        </tr>
+                        <tr>
+                            <td>INFORMATION RATIO</td>
+                            <td>{{ res["INFORMATION_RATIO"] }} </td>
+                        </tr>                    
+                    </tbody>
+                </table>
+            </div>
+
+            <div  class="accuracy-group col-sm-4">
+                <p style="font-weight: 600">CLASSIFICATION SCORES</p>
+                <table class="table-accuracy table table-bordered">
+                    <thead class="black white-text">
+                        <tr>
+                            <th >Class</th>
+                            <th >Prcision</th>
+                            <th >Recall</th>
+                            <th >F1 Score</th>
+                            <th >Support</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if confusionFlag %}
+                            {% for n in range(0,3) %}
+                                <tr>
+                                    <td >{{ res["CLASSIFICATION_DATA"]["Class"][n] }}</td>
+                                    <td >{{ res["CLASSIFICATION_DATA"]["Precision"][n]}}</td>
+                                    <td >{{ res["CLASSIFICATION_DATA"]["Recall"][n] }}</td>
+                                    <td >{{ res["CLASSIFICATION_DATA"]["F-Score"][n] }}</td>
+                                    <td >{{ res["CLASSIFICATION_DATA"]["Support"][n] }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            {% for n in range(0,3) %}
+                                <tr>
+                                    <td ></td>
+                                    <td ></td>
+                                    <td ></td>
+                                    <td ></td>
+                                    <td ></td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>    
+            </div>      
+        </div>
+    </div>
+{% endblock %}

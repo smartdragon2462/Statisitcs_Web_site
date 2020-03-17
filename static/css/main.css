@@ -1,0 +1,261 @@
+
+a{
+    color:black;
+}
+
+#content {
+    width: 100%;
+}
+
+.container {
+    margin-top: 100px;
+    width: auto;
+}
+
+.home_content {
+    width: 80%;
+    justify-content: center;
+    margin: auto;
+}
+
+.home_content p {
+    margin-top: 50px;
+}
+
+.container-fluid .navbar-header {
+    margin-right: auto;
+}
+
+.container-fluid {
+    display: flex;
+}
+
+.container-fluid .navbar-nav a{
+    margin-right: 50px;
+}
+
+.container-fluid .fa-user-circle {
+    color: white;
+    padding: 5px;
+    margin-right: 20px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.hypothesis-inputing .hypothesis-font{
+    font-size: 18px;
+}
+
+.settings-table{
+    font-size: 12px;
+}
+
+.spinner {
+    width: 100px;
+  }
+  .spinner input {
+    text-align: right;
+  }
+  .input-group-btn-vertical {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .input-group-btn-vertical > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 4px 8px 7px 15px;
+    margin-left: 0px;
+    position: relative;
+    border-radius: 0;
+  }
+  .input-group-btn-vertical > .btn:first-child {
+    border-top-right-radius: 4px;
+  }
+  .input-group-btn-vertical > .btn:last-child {
+    margin-top: -2px;
+    border-bottom-right-radius: 4px;
+  }
+  .input-group-btn-vertical i{
+    position: absolute;
+    top: 0;
+    left: 4px;
+  }
+
+  .settings-table tbody tr td, .return-table1 tbody tr td, .return-table2 tbody tr td, .return-table3 tbody tr td{
+      padding:0px;
+      vertical-align:middle;
+      border: none;
+  }
+
+  .table-accuracy tbody tr td{
+    padding:5px;
+    vertical-align:middle;
+  }
+
+  .table-accuracy thead{
+    background-color: black;
+    color: white;
+   }
+
+  .table tbody tr .first{
+    padding-left:5px;
+}
+
+.accuracy-group p{
+    margin: 8px 0 10px;
+}
+
+.form-control{
+    height: 24px;
+    align-items: center;
+    padding: 0px 12px;
+}
+
+.input-group-addon {
+    font-size: 11px;
+    padding-bottom: 3px 9px;
+}
+
+.hypothesis-formula{
+    height: 130px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.button-region .btn{
+    margin-top: 40px;
+    background: black;
+    color: white;
+    border-radius: inherit;
+    justify-content: center;
+    width: 150px;
+}
+
+.button-region{
+    text-align: center;
+
+}
+
+.chart-region{
+    margin-top: 40px;
+    width: 100%;
+    /* width: 80%;
+    height: 300px; */
+    display: inline-block;
+
+    /* margin-top: 100px;
+    width: auto;
+    display: inline-block; */
+    /* margin-left: 5%; */
+}
+
+.highcharts-figure {
+    min-width: 500px; 
+    max-width: 800px;
+    /* min-height: 500px; 
+    max-height: 800px; */
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+	font-family: Verdana, sans-serif;
+	border-collapse: collapse;
+	border: 1px solid #EBEBEB;
+	margin: 10px auto;
+	text-align: center;
+	width: 100%;
+	max-width: 800px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+	font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+.hypothesis-result{
+    margin-top: 0px;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.hypothessis-page .feature1-panel{
+    margin-top: 0px;
+    font-size: 11px;
+    padding-bottom: 0px;
+}
+
+.feature1-panel .table{
+    border-top: groove;
+}
+
+.hypothessis-page .feature2-panel{
+    margin-top: 50px;
+    font-size: 11px;
+    padding-bottom: 50px;
+    display: flex;
+}
+
+.feature2-panel{
+    border-top: groove;
+}
+
+.return-table{
+    text-align: center;
+}
+
+.engine_Param_region .settings-table{
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+.engine_Param_region .settings-table .value_cell{
+    display: flex;
+}
+
+.engine_page .settings-table tbody{
+    border: solid;
+}
+
+.engine_page .table-title{
+
+}
+
+.engine_page .table-title p{
+    width: 200px;
+    background: black;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.engine_page .submit-button{
+    justify-content: center;
+    display: grid;
+}
+
+.engine_page .submit-button button{
+    width: 200px;
+    background: black;
+    color: white
+}

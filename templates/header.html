@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"  href="/">Evolving Engine V1</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class=""><a href="test_hypothesis">Test Hypothesis</a></li>
+                <li><a href="hypothesis_engine">Engine</a></li>
+                <li><a href="tutorial">Tutorial</a></li>
+                <li><a href="documentation">Documentation</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><i class="fa fa-user-circle fa-2x"></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+      {% block content1 %}
+      {% endblock %}
+    </div>
+{% endblock %}
+
+
+

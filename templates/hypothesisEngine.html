@@ -1,0 +1,186 @@
+{% extends 'header.html' %}
+{% block content1 %}
+    <div class="engine_page">
+        <div class="engine_Param_region">
+            <div class="settings-table">
+                <div class="table-title">
+                    <p><i class="hypothesis-font fa fa-cog" style="padding-right: 10px;"> </i>Engine Parameters</p>
+                </div>
+                
+                <table class="table table-bordered ">
+                    <tbody>
+                        <tr>
+                            <td class="column_name col-sm-2">GRAMMAR_FILE</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a>
+                                    <input type="text"  name="GRAMMAR_FILE" class="form-control" id = "GRAMMAR_FILE" value={{ params["GRAMMAR_FILE"] }}>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">FITNESS_FUNCTION</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a>
+                                    <input type="text"  name="FITNESS_FUNCTION" class="form-control" id = "FITNESS_FUNCTION" value={{ params["FITNESS_FUNCTION"] }}>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">CROSSOVER</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="CROSSOVER" class="form-control" id = "CROSSOVER" value={{ params["CROSSOVER"] }} >
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">MAX_INIT_TREE_DEPTH</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="MAX_INIT_TREE_DEPTH" class="form-control" id = "MAX_INIT_TREE_DEPTH" value={{ params["MAX_INIT_TREE_DEPTH"] }} >
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">MIN_INIT_TREE_DEPTH</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="MIN_INIT_TREE_DEPTH" class="form-control" id = "MIN_INIT_TREE_DEPTH" value={{ params["MIN_INIT_TREE_DEPTH"] }} >
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">INIT_GENOME_LENGTH</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="INIT_GENOME_LENGTH" class="form-control" id = "INIT_GENOME_LENGTH"  value={{ params["INIT_GENOME_LENGTH"] }}>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">INTERACTION_PROBABILITY</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="INTERACTION_PROBABILITY" class="form-control" id = "INTERACTION_PROBABILITY" value={{ params["INTERACTION_PROBABILITY"] }}>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">MAX_TREE_DEPTH</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="MAX_TREE_DEPTH" class="form-control" id = "MAX_TREE_DEPTH" value={{ params["MAX_TREE_DEPTH"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">POPULATION_SIZE</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="POPULATION_SIZE" class="form-control" id = "POPULATION_SIZE" value={{ params["POPULATION_SIZE"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">SELECTION_PROPORTION</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="SELECTION_PROPORTION" class="form-control" id = "SELECTION_PROPORTION"  value={{ params["SELECTION_PROPORTION"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">GENERATIONS</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="GENERATIONS" class="form-control" id = "GENERATIONS" value={{ params["GENERATIONS"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">GENERATION_SIZE</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="GENERATION_SIZE" class="form-control" id = "GENERATION_SIZE"  value={{ params["GENERATION_SIZE"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">ELITE_SIZE</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="ELITE_SIZE" class="form-control" id = "ELITE_SIZE" value={{ params["ELITE_SIZE"] }} >
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">CROSSOVER_PROBABILITY</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="CROSSOVER_PROBABILITY" class="form-control" id = "CROSSOVER_PROBABILITY" value={{ params["CROSSOVER_PROBABILITY"] }} >
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">MUTATION_EVENTS</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="MUTATION_EVENTS" class="form-control" id = "MUTATION_EVENTS" value={{ params["MUTATION_EVENTS"] }} >
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">MUTATION_PROBABILITY</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="MUTATION_PROBABILITY" class="form-control" id = "MUTATION_PROBABILITY" value={{ params["MUTATION_PROBABILITY"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="column_name col-sm-2">TOURNAMENT_SIZE</td>
+                            <td class="column_val col-sm-2">
+                                <div class="value_cell">
+                                    <a style="padding-right: 5px;">:</a style="padding-left: 5px;">
+                                    <input type="text"  name="TOURNAMENT_SIZE" class="form-control" id = "TOURNAMENT_SIZE" value={{ params["TOURNAMENT_SIZE"] }}>
+                                </div>                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="submit-button">
+                    <button type="submit" class="btn" onclick="hypothesis_engine_Run()" method="POST"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i> Generate Hypothesis</button>
+                </div>
+
+            </div>
+        </div>
+        <div class = "output-region" style="padding-right: 15%;padding-left: 15%;">
+            <div class="output_tag" id="output_tag">                
+            </div>
+        </div>
+    </div>
+{% endblock %}
